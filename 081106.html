@@ -1,0 +1,79 @@
+<!-- DataTables -->
+<!-- 
+    DataTable 適合用在資料不多的情況
+    如果資料多筆，建議自己寫 datatable / pagination(分頁)
+ -->
+ <!-- 
+    select * from table ... 實際工作很少用，當資料多筆(幾萬筆)，會跑很慢甚至當掉
+  -->
+<!-- 
+    DataTables 是 jQuery Javascript 庫的插件,
+    針對處理table資料非常方便,
+    只要引入此套件就有像是分頁、搜尋、排序…等功能，也提供多項客製化選項
+ -->
+ <!-- 
+    載入順序:
+    1.cdn.js
+    2.html
+    3.script
+        3-1.jq (放js上面)
+        3-2.js
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Datatables css cdn -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+</head>
+
+<body>
+
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 3 Data 1</td>
+                <td>Row 3 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 4 Data 1</td>
+                <td>Row 4 Data 2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- jq cdn -->
+    <!-- jq 要放在 js 上面,不然會讀不出來 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Datatables js cdn -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+    <!-- script -->
+    <script>
+        $(document).ready(function () { 
+            $('#table_id').DataTable(); // Jq初始化語法
+        });
+    </script> 
+
+</body>
+
+</html>
