@@ -21,6 +21,13 @@ $curl=curl_init("https://data.ntpc.gov.tw/api/datasets/71CD1490-A2DF-4198-BEF1-3
 // https 要取得
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); 
 
+/*
+ * 
+ * 使用PHP curl獲取頁面內容或提交資料，
+ * 有時候希望返回的內容作為變數儲存，而不是直接輸出。
+ * 這個時候就必需設定curl的CURLOPT_RETURNTRANSFER選項為1或true。
+ * 
+ */
 //回傳結果到 不會輸出在畫面上 傳給前端js要記得加這行
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
