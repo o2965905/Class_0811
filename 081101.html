@@ -36,17 +36,22 @@
         4.加入統計圖表
      -->
     <div>
+        <!-- 
+             1. HTML 中使用 canvas 標籤，一定要有 id 來取得 DOM 位置。寬度高度視情況決定要不要寫死 
+        -->
         <canvas id="myChart" width="400" height="400"></canvas>
         <script>
+            // 2. 在 JS 檔案中，先取得 DOM 位置，再用 new Chart(DOMposition,config) 的格式載入即可
             const ctx = document.getElementById('myChart');
             const myChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'bar',//type = 圖表類型
                 data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],//labels = 項目的標籤
+                    //資料則是以陣列形式放在 data.datasets.data 裡面
                     datasets: [{
                         label: '# of Votes',
                         data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
+                        backgroundColor: [ //backgroundColor = 在圖表加入背景顏色
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 206, 86, 0.2)',
@@ -54,7 +59,7 @@
                             'rgba(153, 102, 255, 0.2)',
                             'rgba(255, 159, 64, 0.2)'
                         ],
-                        borderColor: [
+                        borderColor: [ //borderColor = 在圖表加入邊框顏色
                             'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
@@ -62,7 +67,7 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 1
+                        borderWidth: 1 //borderWidth = 線條寬度
                     }]
                 },
                 options: {
