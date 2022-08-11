@@ -1,5 +1,20 @@
 <?php
 
+/*
+ * 
+ * 
+ * 發出 CORS Request 時瀏覽器會自動在 Request header 加上目前的 Origin
+ * 後端必須在 Response header 中加上相符的 Access-Control-Allow-Origin 才能完成 CORS
+ * 
+ * 例如:
+ * Access-Control-Allow-Origin: * => # 同意全部的
+ * Access-Control-Allow-Origin: http://example.com  => # 只允許 http://example.com
+ * 
+ * 
+ */
+header("Access-Control-Allow-Origin: *");
+
+
 // 初始化 CURL
 $curl=curl_init("https://data.ntpc.gov.tw/api/datasets/71CD1490-A2DF-4198-BEF1-318479775E8A/json?page=0&size=10");
 
