@@ -10,3 +10,12 @@
  #### DataTables
  + [DataTables 初階教學 : 引入 ](081106.html)
  + [DataTables 初階教學 : 撈資料 ](factory_2022072505.html)
+ ***
+  #### OpenData API 串接
+  + [OpenData API 串接 : 前端](081107.html)
+  + [OpenData API 串接 : 後端](081107.php)
+
+  ##### 補充 : 透過 Ajax 取得 api 失敗時 ， 透過 php 的 curl 取得 api
+ ***
+
+
