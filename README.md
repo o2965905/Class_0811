@@ -1,4 +1,4 @@
-# 0811 課程內容
+# Chart.js / DataTables / OpenData API 串接
  
  #### Chart.js(圖表繪製)
  + [Chart.js 初階教學 : 引入與顯示圖表](081101.html)
