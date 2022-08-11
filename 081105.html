@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <style>
+        .canvas {
+                    width:1000px;
+                }
+            </style>
+    <div class="canvas">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div>
+        <button id="red" type="button">Red +</button>
+        <button id="blue" type="button">Blue +</button>
+        <button id="yellow" type="button">Yellow +</button>
+        <button id="green" type="button">Green +</button>
+        <button id="purple" type="button">Purple +</button>
+        <button id="orange" type="button">Orange +</button>
+    </div>
+    <div>
+        <button id="red2" type="button">Red -</button>
+        <button id="blue2" type="button">Blue -</button>
+        <button id="yellow2" type="button">Yellow -</button>
+        <button id="green2" type="button">Green -</button>
+        <button id="purple2" type="button">Purple -</button>
+        <button id="orange2" type="button">Orange -</button>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+        // 投票按鈕
+        var red = document.getElementById('red');
+        var blue = document.getElementById('blue');
+        var yellow = document.getElementById('yellow');
+        var green = document.getElementById('green');
+        var purple = document.getElementById('purple');
+        var orange = document.getElementById('orange');
+        // 反對票按鈕
+        var red2 = document.getElementById('red2');
+        var blue2 = document.getElementById('blue2');
+        var yellow2 = document.getElementById('yellow2');
+        var green2 = document.getElementById('green2');
+        var purple2 = document.getElementById('purple2');
+        var orange2 = document.getElementById('orange2');
+
+        var chartData =
+        {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        }
+        // 開始繪製圖表
+        var myChart = new Chart(ctx, chartData);
+
+        red.onclick = function () {
+            chartData.data.datasets[0].data[0]++;
+            myChart.update();
+        }
+        blue.onclick = function () {
+            chartData.data.datasets[0].data[1]++;
+            myChart.update();
+        }
+        yellow.onclick = function () {
+            chartData.data.datasets[0].data[2]++;
+            myChart.update();
+        }
+        green.onclick = function () {
+            chartData.data.datasets[0].data[3]++;
+            myChart.update();
+        }
+        purple.onclick = function () {
+            chartData.data.datasets[0].data[4]++;
+            myChart.update();
+        }
+        orange.onclick = function () {
+            chartData.data.datasets[0].data[5]++;
+            myChart.update();
+        }
+
+        // 反對票事件
+        red2.onclick = function () {
+            chartData.data.datasets[0].data[0]--;
+            myChart.update();
+        }
+        blue2.onclick = function () {
+            chartData.data.datasets[0].data[1]--;
+            myChart.update();
+        }
+        yellow2.onclick = function () {
+            chartData.data.datasets[0].data[2]--;
+            myChart.update();
+        }
+        green2.onclick = function () {
+            chartData.data.datasets[0].data[3]--;
+            myChart.update();
+        }
+        purple2.onclick = function () {
+            chartData.data.datasets[0].data[4]--;
+            myChart.update();
+        }
+        orange2.onclick = function () {
+            chartData.data.datasets[0].data[5]--;
+            myChart.update();
+        }
+
+    </script>
+</body>
+
+</html>
