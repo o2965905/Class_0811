@@ -33,7 +33,9 @@
                 <tr>
                     <th>ID</th>
                     <th>地區</th>
+                    <th>縣市</th>
                     <th>NAME</th>
+                    <th>地址</th>
                     <th>WEB</th>
                 </tr>
             </thead>
@@ -121,7 +123,13 @@
                                     data: 'area'
                                 },
                                 {
+                                    data: 'district'
+                                },
+                                {
                                     data: 'name'
+                                },
+                                {
+                                    data: 'address'
                                 },
                                 {
                                     data: 'web'
@@ -155,7 +163,9 @@
                                     <tr>
                                         <td>${item.id}</td>
                                         <td>${item.area}</td>
+                                        <td>${item.district}</td>
                                         <td>${item.name}</td>
+                                        <td>${item.address}</td>
                                         <td>${item.web}</td>
                                     </tr>              
                                     `;
