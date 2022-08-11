@@ -10,19 +10,53 @@
 </head>
 <body>
     <script>
+        /**
+         * 
+         * 1.先用 postman 確認是否可測試 api 正常運作，建立 081107.html，這裡示範 getJSON 用法取得
+         * 2.此時能確認不允許前端 JS 直接共享請求
+         * 3.我們改用 php 來完成 api 串接，建立 081107.php
+         * 
+         **/
         // $.getJSON('https://data.ntpc.gov.tw/api/datasets/71CD1490-A2DF-4198-BEF1-318479775E8A/json?page=0&size=100')
         //     .done(function (res){
         //         console.log(res);
         //     });
-        $.getJSON('./081107.php')
+
+
+        /**
+         * 
+         * localhost html vs localhost php
+         * html => http://localhost/081107.html
+         * php => http://192.168.211.69/081107.html
+         * 
+         * ip取得 => cmd(命令提字元) -> ipconfig -> get ip
+         * 
+         **/
+
+        //第一組
+        // $.getJSON('./081107.php')
+        //     .done(function (res){
+
+        //         //撈全部
+        //         // console.log(res);
+
+        //         //撈指定資料
+        //         console.log(res[2]);
+
+        //     });
+
+
+        //第二組
+        $.getJSON('http://192.168.211.69/081107.php')
             .done(function (res){
+
                 //撈全部
                 // console.log(res);
 
                 //撈指定資料
                 console.log(res[2]);
+                
             });
-
 
     </script>
 </body>
